@@ -82,7 +82,7 @@
     </div>
 
           @foreach($pengumuman as $announc)
-        <!-- Modal Show -->
+        <!-- Modal Show --> 
                 <!-- Modal Delete -->
                     <div class="modal fade" id="delete{{$announc->id_pengumuman}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">

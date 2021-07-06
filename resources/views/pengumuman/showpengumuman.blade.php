@@ -138,7 +138,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                         </span>
                                         <span class="text">Kembali</span>
                                     </a>
-                                    <a href="" class="btn btn-primary btn-icon-split">
+                                    <a href="" class="btn btn-primary btn-icon-split" data-toggle="modal"
+                                            data-target="#send{{$post->id_pengumuman}}">
                                         <span class="icon text-white-50">
                                             <i class="fa fa-telegram"></i>
                                         </span>
@@ -162,19 +163,21 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 <!-- Modal Send Telegram -->
-<div class="modal fade" id="sendTelegram" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="send{{$post->id_pengumuman}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-edit"></i> Kirim telegram</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">
+                Apakah Anda yakin Mengirim pengumuman ke Telegram?</b>
+            </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="{{url('logouts')}}">Logout</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Tidak</button>
+                <a href="/admin/pengumuman/showpengumuman/{{$post->id_pengumuman}}/delete"><button type="submit" class="btn btn-primary"><i class="fa fa-telegram"></i> Ya</button></a>
             </div>
         </div>
     </div>
