@@ -42,7 +42,10 @@ class tb_alumni extends Model
         return $this->belongsTo('App\tb_jawaban','id_jawaban','id_jawaban');
     }
 
-
+    public function routeNotificationForTelegram()
+    {
+        return '584467570';
+    }
 
     // function anggota_enum ($table, $field)
     // {
