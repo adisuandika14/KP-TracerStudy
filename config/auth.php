@@ -74,6 +74,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'alumni' => [
+            'driver' => 'eloquent',
+            'model' => App\tb_alumni::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -116,6 +120,6 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    'password_timeout' => 60,
 
 ];
