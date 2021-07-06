@@ -19,6 +19,6 @@ class dashboardController extends Controller
 
 
     public function export(){
-        return Excel::download(new ALumniExport, 'Alumni.xlsx');
+        return Excel::download(new ALumniExport, 'Data Alumni.xlsx');
     }
 }
