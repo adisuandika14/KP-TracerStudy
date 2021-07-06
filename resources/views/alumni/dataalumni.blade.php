@@ -18,9 +18,11 @@
             
             <div class="card-body">
               <div class="table-responsive">
-              <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#create"><i
+                <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#create"><i
                             class="fas fa-plus"></i> Tambah Data Alumni
-                    </button>
+                </button>
+                  <!-- <a href="{{action('dashboardController@export')}}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                  class="fas fa-download fa-sm text-white-50"></i>  Data Alumni</a> -->
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>

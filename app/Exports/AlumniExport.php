@@ -48,8 +48,6 @@ class AlumniExport implements FromCollection, WithHeadings
         return[
 
             'Nama Alumni',
-            'Program Studi',
-            'Angkatan',
             'Alamat',
             'Tahun Lulus',
             'Tahun Wisuda',

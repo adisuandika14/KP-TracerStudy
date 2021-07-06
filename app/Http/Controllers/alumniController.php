@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Exports\AlumniExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\tb_alumni;
 use App\tb_angkatan;
 use App\tb_kota;
@@ -102,7 +104,9 @@ class alumniController extends Controller
     }
 
 
-
+    public function export(){
+        return Excel::download(new ALumniExport, 'Data Alumni.xlsx');
+    }
 
 
     
