@@ -31,6 +31,8 @@ return [
     |                       Acme\Project\Commands\BotFather\ByeCommand::class,
     |             ]
     */
+
+    'bot_token' => '1868474379:AAFWGHW_JfC3WeUbOUG1kV1wQngZksl_hVM',
     'bots'                         => [
         'mybot' => [
             'username'            => 'botwebtestbot', 

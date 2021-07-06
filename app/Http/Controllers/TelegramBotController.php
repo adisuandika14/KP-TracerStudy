@@ -16,9 +16,14 @@ class TelegramBotController extends Controller
         dd($activity);
     }
 
+    // public function sendMessage()
+    // {
+    //     return view('telegram/message')->with('success','Data berhasil dikirim!');
+    // }
+
     public function sendMessage()
     {
-        return view('telegram/message')->with('success','Data berhasil dikirim!');
+        return '584467570';
     }
 
     public function storeMessage(Request $request)

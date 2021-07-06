@@ -23,4 +23,9 @@ class tb_pengumuman extends Model
         return $this->belongsTo('App\tb_detail_pengumuman','id_pengumuman','id_pengumuman');
     }
 
+    public function routeNotificationForTelegram()
+    {
+        return '584467570';
+    }
+
 }
