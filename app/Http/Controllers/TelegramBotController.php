@@ -34,8 +34,8 @@ class TelegramBotController extends Controller
         ]);
 
 
-        $text = "A new contact us query\n"
-            . "<b>Email Address: </b>\n"
+        $text = "Fakultas Teknik\n"
+            . "<b>judul Pengumuman: </b>\n"
             . "$request->judul\n"
             . "<b>Message: </b>\n"
             . $request->message;
