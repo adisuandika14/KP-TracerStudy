@@ -28,7 +28,7 @@ class TelegramBotController extends Controller
 
     public function storeMessage(Request $request)
     {
-        $request->validate([
+        $request->validate([ 
             'email' => 'required|email',
             'message' => 'required'
         ]);

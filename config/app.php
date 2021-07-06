@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
+        TelegramNotifications\TelegramServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         //Goodnesskay\LaravelPdfViewer\LaravelPdfViewerServiceProvider::class,
 

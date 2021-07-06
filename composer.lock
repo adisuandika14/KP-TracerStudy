@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d20343f14771b61e77bf5b1de0d78b31",
+    "content-hash": "8aca2599085f79a75f41f994512b275b",
     "packages": [
         {
             "name": "alexusmai/laravel-file-manager",
@@ -248,6 +248,53 @@
                 "source": "https://github.com/azishapidin/indoregion/tree/master"
             },
             "time": "2020-06-06T13:48:45+00:00"
+        },
+        {
+            "name": "babenkoivan/telegram-notifications",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/babenkoivan/telegram-notifications.git",
+                "reference": "020884bba90986c34a2a2fb0b65acf178fcb0906"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/babenkoivan/telegram-notifications/zipball/020884bba90986c34a2a2fb0b65acf178fcb0906",
+                "reference": "020884bba90986c34a2a2fb0b65acf178fcb0906",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TelegramNotifications\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Babenko Ivan",
+                    "email": "babenko.i.a@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Telegram notifications for Laravel",
+            "homepage": "https://github.com/babenkoivan/telegram-notifications",
+            "keywords": [
+                "laravel",
+                "notification",
+                "telegram"
+            ],
+            "support": {
+                "issues": "https://github.com/babenkoivan/telegram-notifications/issues",
+                "source": "https://github.com/babenkoivan/telegram-notifications/tree/v1.0.1"
+            },
+            "time": "2018-07-09T18:59:33+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",

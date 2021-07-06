@@ -14,12 +14,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => 'b70db8f90e1cb4145b2477e1852b1e1a10439842',
+    'reference' => 'a2ebd38d7e56738352bf09a86900f73cf7f8060c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -59,6 +59,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ebe4f4af86325b8dcbae9be8e1f25fbbb08c772e',
+    ),
+    'babenkoivan/telegram-notifications' => 
+    array (
+      'pretty_version' => 'v1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '020884bba90986c34a2a2fb0b65acf178fcb0906',
     ),
     'barryvdh/laravel-dompdf' => 
     array (
@@ -529,12 +538,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => 'b70db8f90e1cb4145b2477e1852b1e1a10439842',
+      'reference' => 'a2ebd38d7e56738352bf09a86900f73cf7f8060c',
     ),
     'laravel/tinker' => 
     array (
