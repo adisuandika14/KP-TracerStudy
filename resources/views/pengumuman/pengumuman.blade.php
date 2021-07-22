@@ -45,7 +45,7 @@
                                 <td style="width: 30px;">{{ $announce->lampiran }}</td>
                                  -->
 
-                                <td style="width: 10%">
+                                <td style="width: 13%">
                                     <!-- Show -->
                                     <a style="margin-right:7px" href="/admin/pengumuman/showpengumuman/{{$announce->id_pengumuman}}">
                                     <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a>
@@ -57,9 +57,13 @@
                                     <a style="margin-right:7px" href="/admin/pengumuman/{{$announce->id_pengumuman}}/edit">
                                     <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button></a>
                                     <!--Delete -->
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                    <button style="margin-right:7px" class="btn btn-danger btn-sm" data-toggle="modal"
                                             data-target="#delete{{$announce->id_pengumuman}}"><i class="fas fa-trash"></i>
                                     </button>
+
+                                    <!-- <a  href="{'url(send-message)'}">
+                                    <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-telegram"></i></button></a> -->
+
                                 </td>
                                 
                                 <!-- <td style="width: 10%">

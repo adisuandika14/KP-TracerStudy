@@ -27,26 +27,42 @@ class TelegramBotController extends Controller
         return '584467570';
     }
 
-    public function storeMessage(Request $request){
+    public function storeMessage($id, Request $request){
         
         //$test = tb_pengumuman::all();
-        $chat_id = tb_alumni::all();
-        $text = tb_pengumuman::all();
-            "Pengumuman\n"
-            . "<b>judul Pengumuman: </b>\n"
-            . "$text = $request->judul;\n"
-            . "<b>Message: </b>\n"
-            . $text->perihal;
+        $alumni = tb_alumni::all();
+        $pengumuman=tb_pengumuman::find($id);
+        $text = $pengumuman->judul;
+            // "Pengumuman\n"
+            // . "<b>judul Pengumuman: </b>\n"
+            // . "$text->judul;\n"
+            // . "<b>Message: </b>\n"
+            // . $text->perihal;
+            foreach ($alumni as $alumni){
+                // Telegram::sendMessage([
+                //     'token' => env('TELEGRAM_BOT_TOKEN', ''),
+                //     'parse_mode' => 'HTML',
+                //     'chat_id' => $alumni->chat_id,
+                //     'text' => $text
+                // ]);
+                $message ='Pengumuman \n'.$pengumuman->judul;
+                $url = 'https://api.telegram.org/bot1624417891:AAFwIpCtR4rqQ5FtvvYuk_Q9G6DIM8KmHL0/sendMessage?chat_id='.$alumni->chat_id.'&text='.$message;
 
-        Telegram::sendMessage([
-            'token' => env('TELEGRAM_BOT_TOKEN', ''),
-            'parse_mode' => 'HTML',
-            'chat_id' => $chat_id,
-            'text' => $text
-        ]);
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, $url);
+                    curl_setopt($ch, CURLOPT_POST, 0);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                    $response = curl_exec ($ch);
+                    $err = curl_error($ch);  //if you need
+                    curl_close ($ch);
+                    // return $response;
+            }
+
         
-            dd($text);
-        //return redirect()->back()->with('success','Data berhasil dikirim!');
+        
+            // dd($text);
+        return redirect()->back()->with('success','Data berhasil dikirim!');
     }
 
     public function sendPhoto()

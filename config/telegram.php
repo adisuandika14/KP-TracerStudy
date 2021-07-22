@@ -32,10 +32,10 @@ return [
     |             ]
     */
 
-    'bot_token' => '1868474379:AAFWGHW_JfC3WeUbOUG1kV1wQngZksl_hVM',
+    
     'bots'                         => [
         'mybot' => [
-            'username'            => 'botwebtestbot', 
+            'username'            => '@TracerStudyFTUnud_Bot', 
             'token'               => env('TELEGRAM_BOT_TOKEN', ''),
             'certificate_path'    => env('TELEGRAM_CERTIFICATE_PATH', ''),
             'webhook_url'         => env('TELEGRAM_WEBHOOK_URL', ''),

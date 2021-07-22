@@ -62,9 +62,9 @@ Route::group(['prefix' => 'admin',  'middleware' => 'AdminMiddleware'],function(
     Route::get('/pengumuman/showpengumuman/{id}', 'pengumumanController@detail');
     Route::get('/pengumuman/{id}/edit', 'pengumumanController@edit');
     Route::post('/pengumuman/{id}', 'pengumumanController@update');
-    
+
     Route::post('/pengumuman/{id}', 'pengumumanController@send');
-    Route::post('/pengumuman/showpengumuman/send-message', 'TelegramBotController@storeMessage');
+    Route::post('/pengumuman/showpengumuman/send-message/{id}', 'TelegramBotController@storeMessage');
 
     //Lowongan
     Route::get('/lowongan','lowonganController@show');
