@@ -14,37 +14,45 @@ class TelegramNotification extends Notification
 {
     use Queueable;
 
-    // public function __construct()
-    // {
-        
-    // }
+    public function __construct(array $arr)
+    {
+        $this->data = $arr;
+    }
 
     // public function via($notifiable)
     // {
     //     return ['mail'];
     // }
 
-    // public function toMail($notifiable)
-    // {
-    //     return (new MailMessage)
-    //                 ->line('The introduction to the notification.')
-    //                 ->action('Notification Action', url('/'))
-    //                 ->line('Thank you for using our application!');
-    // }
-    // public function toArray($notifiable)
-    // {
-    //     return [
-            
-    //     ];
-    // }
-    public function via()
+    public function via($notifiable)
     {
         return [TelegramChannel::class];
     }
 
-    public function toTelegram()
+    public function toMail($notifiable)
     {
-        return (new TelegramMessage())
-            ->text('Hello, world!');
+        return (new MailMessage)
+                    ->line('The introduction to the notification.')
+                    ->action('Notification Action', url('/'))
+                    ->line('Thank you for using our application!');
+    }
+
+    // public function toTelegram() {
+    //     return (new TelegramMessage())
+    //         ->text($this->data['text']);
+    // }
+
+    public function toArray($notifiable)
+    {
+        return [
+            
+        ];
+    }
+
+    public function toTelegram() {
+        return (new TelegramCollection())
+            ->message(['judul' => $this->data['judul']])
+            ->location(['jenis' => $this->data['jenis'], 'longitude' => $this->data['longitude']])
+            ->photo(['photo' => $this->data['photo'], 'caption' => $this->data['photo_caption']]);
     }
 }

@@ -62,7 +62,9 @@ Route::group(['prefix' => 'admin',  'middleware' => 'AdminMiddleware'],function(
     Route::get('/pengumuman/showpengumuman/{id}', 'pengumumanController@detail');
     Route::get('/pengumuman/{id}/edit', 'pengumumanController@edit');
     Route::post('/pengumuman/{id}', 'pengumumanController@update');
+    
     Route::post('/pengumuman/{id}', 'pengumumanController@send');
+    Route::post('/pengumuman/showpengumuman/send-message', 'TelegramBotController@storeMessage');
 
     //Lowongan
     Route::get('/lowongan','lowonganController@show');
@@ -72,10 +74,6 @@ Route::group(['prefix' => 'admin',  'middleware' => 'AdminMiddleware'],function(
     Route::get('/lowongan/showlowongan/{id}', 'lowonganController@detail');
     Route::get('/lowongan/{id}/edit', 'lowonganController@edit');
     Route::post('/lowongan/{id}', 'lowonganController@update');
-
-
-    //Route::post('','');
-
 
 
     //Master Angkatan
@@ -163,24 +161,23 @@ Route::prefix('pimpinan')->group(function(){
     Route::get('/lowongan/{id}/edit', 'lowonganController@edit');
     Route::post('/lowongan/{id}', 'lowonganController@update');
 
-
-
-
-
     Route::get('/dashboard','dashboardpimpinanController@dashboard');
 
 
 });
-
+//1624417891:AAFwIpCtR4rqQ5FtvvYuk_Q9G6DIM8KmHL0
+//@TracerStudyFTUnud_Bot
 
 
 
 //Telegram
 //Route::get('/', 'TelegramBotController@sendMessage');
-Route::post('/send-message', 'TelegramBotController@storeMessage');
-Route::get('/send-photo', 'TelegramBotController@sendPhoto');
-Route::post('/store-photo', 'TelegramBotController@storePhoto');
-Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
+// Route::post('/send-message', 'TelegramBotController@storeMessage');
+// Route::get('/send-photo', 'TelegramBotController@sendPhoto');
+// Route::post('/store-photo', 'TelegramBotController@storePhoto');
+// Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
+
+//Route::post('/send-message', 'Notifications/TelegramNotification@toTelegram');
 
 
 

@@ -25,7 +25,7 @@ class tb_pengumuman extends Model
 
     public function routeNotificationForTelegram()
     {
-        return '584467570';
+        return $this->chat_id;
     }
 
 }

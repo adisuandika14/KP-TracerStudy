@@ -110,8 +110,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="card border-0 bg-grey hover">
                         <table class="table table">
                             <td style="width: 50%;">
+                            <form id="form-product" method="post" action="/admin/pengumuman/showpengumuman/send-message" enctype="multipart/form-data">
+                              @csrf
                                 <div class="form-group">
-                                    <label class="font-weight-bold text-dark">Judul Pengumuman</label>
+                                <label class="font-weight-bold text-dark">Judul Pengumuman</label>
                                     <label type="text" class="form-control" style="width: 50%;" placeholder="">{{$post->judul}}</label>
                                 </div>
                                 <div class="form-group">
@@ -138,13 +140,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                         </span>
                                         <span class="text">Kembali</span>
                                     </a>
-                                    <a href="{{$post->id_pengumuman}}" class="btn btn-primary btn-icon-split">
+                                    <!-- <button type="submit" class="btn btn-primary"><i class="fa fa-tel;egram"></i> Simpan</button> -->
+                                    <a href="{'url(send-message)'}" class="btn btn-primary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fa fa-telegram"></i>
                                         </span>
                                         <span class="text">Kirim Telegram</span>
                                     </a>
-                                  
+                                    
+                                  </form>
                                 </div>
                             </td>
                             <td>

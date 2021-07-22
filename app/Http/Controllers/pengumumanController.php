@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use AMBERSIVE\DocumentViewer\Abstracts\DocumentAbstract;
+use App\Notifications\TelegramNotification;
 use App\tb_detail_pengumuman;
 
 class pengumumanController extends Controller
@@ -119,6 +120,9 @@ class pengumumanController extends Controller
         }
 
 
+    
+        //return  $post;
+
 
         return redirect('/admin/pengumuman')->with('success', 'Berhasil menambahkan Data');
     }
@@ -130,24 +134,6 @@ class pengumumanController extends Controller
         $post->delete();
         return redirect('/admin/pengumuman')->with('success', 'Berhasil menghapus Data');
     }
-
-    // public function store(Request $request){
-    //     $data =  new tb_pengumuman;
-    //     if($request->file ('file')){
-    //         $file=$request->file('file');
-    //         $filename=time().'.'.$file->getClientOriginalExtension();
-    //         $request->file->move('storage/'. $filename);
-    //         $data->file = $filename;  
-    //     }
-    //     $data->judul=$request->judul;
-    //     //$data->pengumuman=$request->pengumuman;
-    //     $data->save();
-    //     return redirect('/admin/pengumuman');
-
-
-    // }
-
-
 
 
 
@@ -280,19 +266,34 @@ class pengumumanController extends Controller
     }
 
 
-    public function send(Request $request, $id){
-        $send = tb_pengumuman::find($id);
-        // for($i=1; $i<=100; $i+=1){
-        //     $send->sending = "Sending";
-        // }
-        // $send->judul = $request->judul;
-        // $send->jenis = $request->jenis;
-        // $send->perihal = $request->perihal;
-        $send->sending = "Sending";
-        $send->update();
-        dd($send);
-        // return redirect('/admin/pengumuman')->with('success', 'Berhasil Mengirim ke Telegram');
+    // public function send(Request $request, $id){
+    //     $send = tb_pengumuman::find($id);
+    //     // for($i=1; $i<=100; $i+=1){
+    //     //     $send->sending = "Sending";
+    //     // }
+    //     // $send->judul = $request->judul;
+    //     // $send->jenis = $request->jenis;
+    //     // $send->perihal = $request->perihal;
+    //     $send->sending = "Sending";
+    //     $send->update();
+    //     dd($send);
+    //     // return redirect('/admin/pengumuman')->with('success', 'Berhasil Mengirim ke Telegram');
+    // }
+
+
+    public function TelegrmNotif(array $data){
+
+        $user = tb_pengumuman::create([
+            'judul' => $data['judul'],
+        ]);
+
+        $user->notify(new TelegramNotification([
+            'text' => "Welcome to the application " . $user->judul . "!"
+        ]));
+    
+        return  $user;
     }
+
 
 
 }

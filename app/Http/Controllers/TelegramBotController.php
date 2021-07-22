@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\tb_pengumuman;
+use App\tb_alumni;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Telegram\Bot\FileUpload\InputFile;
@@ -26,38 +27,26 @@ class TelegramBotController extends Controller
         return '584467570';
     }
 
-    public function storeMessage(Request $request)
-    {
-        $request->validate([ 
-            'email' => 'required|email',
-            'message' => 'required'
-        ]);
-
-
-        $text = "Fakultas Teknik\n"
+    public function storeMessage(Request $request){
+        
+        //$test = tb_pengumuman::all();
+        $chat_id = tb_alumni::all();
+        $text = tb_pengumuman::all();
+            "Pengumuman\n"
             . "<b>judul Pengumuman: </b>\n"
-            . "$request->judul\n"
+            . "$text = $request->judul;\n"
             . "<b>Message: </b>\n"
-            . $request->message;
-
-
-        // $post = tb_pengumuman::where('id_pengumuman', $id)->first();
-
-        // $post->notify(new telegram([
-        //     'text' => "Judul Pengumuman " . $post->judul . "!",
-        //     'text' => "Jenis Pengumuman " . $post->jenis . "!",
-        //     'text' => "Perihal Pengumuman " . $post->perihal . "!",
-        //     'text' => "Sifat Surat " . $post->judul . "!",
-
-        // ]));
+            . $text->perihal;
 
         Telegram::sendMessage([
-            'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
+            'token' => env('TELEGRAM_BOT_TOKEN', ''),
             'parse_mode' => 'HTML',
+            'chat_id' => $chat_id,
             'text' => $text
         ]);
-
-        return redirect()->back()->with('success','Data berhasil dikirim!');
+        
+            dd($text);
+        //return redirect()->back()->with('success','Data berhasil dikirim!');
     }
 
     public function sendPhoto()
@@ -74,7 +63,7 @@ class TelegramBotController extends Controller
         $photo = $request->file('file');
 
         Telegram::sendPhoto([
-            'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
+            'token' => env('TELEGRAM_BOT_TOKEN', ''),
             'photo' => InputFile::createFromContents(file_get_contents($photo->getRealPath()), Str::random(10) . '.' . $photo->getClientOriginalExtension())
         ]);
 

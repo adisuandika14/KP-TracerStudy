@@ -94,11 +94,11 @@
                                             <input type="text" class="form-control" id="alamat_alumni" name="alamat_alumni"
                                                 value="{{$datass->alamat_alumni}}" readonly>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label class="font-weight-bold text-dark">Kota</label>
                                             <input type="text" class="form-control" id="nama_kota" name="nama_kota"
                                                 value="{{$datass->nama_kota}}" readonly>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <label class="font-weight-bold text-dark">Program Studi</label>
                                             <input type="text" class="form-control" id="nama_prodi" name="nama_prodi"
@@ -128,11 +128,11 @@
                                             <input type="text" class="form-control" id="gender" name="gender"
                                                 value="{{$datass->relasiAlumnitoGender->gender}}" readonly>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label class="font-weight-bold text-dark">Provinsi</label>
                                             <input type="text" class="form-control" id="nama_provinsi" name="nama_provinsi"
                                                 value="{{$datass->nama_provinsi}}" readonly>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <label class="font-weight-bold text-dark">Handphone</label>
                                             <input type="text" class="form-control" id="no_hp" name="no_hp"
@@ -285,7 +285,7 @@
                         <input type="text" class="form-control" id="nama_alumni" name="nama_alumni" placeholder="">
                       </div>
                       <div class="form-group">
-                        <label for="id_gender" class="font-weight-bold text-dark">Program Studi</label>
+                        <label for="id_gender" class="font-weight-bold text-dark">Jenis kelamin</label>
                                     <select name="id_gender" id="gender" class="custom-select" required>
                                         <option>-- Pilih Jenis Kelamin --</option>
                                         @foreach($gender as $genders)
@@ -297,7 +297,7 @@
                         <label class="font-weight-bold text-dark">Alamat</label>
                         <input type="text" class="form-control" id="alamat_alumni" name= "alamat_alumni" placeholder="">
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <label for="province_id" class="font-weight-bold text-dark">Provinsi</label>
                                     <select name="provinsi" class="custom-select" id="provinsi" required>
                                         <option>-- Pilih Provinsi --</option>
@@ -310,9 +310,9 @@
                         <label for="regencies_id" class="font-weight-bold text-dark">Kabupaten</label>
                                     <select name="kabupaten" id="kabupaten" class="custom-select" required>
                                         <option >--Pilih Kabupaten--</option>
-                                        <!-- @foreach($regencies as $reggen)
+                                        @foreach($regencies as $reggen)
                                         <option id="kabupaten" value="{{$reggen->regencies_id}}">{{$reggen->name}}</option>
-                                        @endforeach -->
+                                        @endforeach
                                     </select>
                       </div> 
 
@@ -320,11 +320,11 @@
                         <label for="district_id" class="font-weight-bold text-dark">Kecamatan</label>
                                     <select name="district_id" id="kecamatan" class="custom-select" required>
                                         <option>-- Pilih Kecamatan --</option>
-                                        <!-- @foreach($districts as $dist)
+                                        @foreach($districts as $dist)
                                         <option  value="{{$dist->district_id}}">{{$dist->name}}</option>
-                                        @endforeach -->
+                                        @endforeach
                                     </select>
-                      </div>
+                      </div> -->
 
                       <div class="form-group">
                         <label for="id_prodi" class="font-weight-bold text-dark">Program Studi</label>
@@ -386,8 +386,6 @@
 <script>
     //Provinsi AJAX
     $(document).ready(function(){
-
-    
         $('#provinsi').on('change', function(){
           let id = $(this).val();
           $('#kabupaten').empty();

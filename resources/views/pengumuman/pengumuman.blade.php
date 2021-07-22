@@ -31,7 +31,7 @@
                     </tr>
                   </thead>
 
-                  <tbody>
+                  <tbody> 
                         @foreach ($pengumuman as $announce)
                             <tr class="success">
                                 <td style="width: 5%;">{{ $loop->iteration }}</td>
