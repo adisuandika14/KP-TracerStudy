@@ -71,6 +71,36 @@ class detailkuesionerController extends Controller
                 $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
                 $opsi->save();
             }
+            if($request->opsi6 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->opsi6;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->opsi7 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->opsi7;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->opsi8 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->opsi8;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->opsi9 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->opsi9;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->opsi10 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->opsi10;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
         }
 
         return redirect()->route('show-kuesioner', $request->id_kuesioner)->with('statusInput', 'Pertanyaan berhasil ditambahkan');
@@ -164,6 +194,36 @@ class detailkuesionerController extends Controller
             if($request->edit_opsi5 != ""){
                 $opsi = new tb_opsi();
                 $opsi->opsi = $request->edit_opsi5;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->edit_opsi6 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->edit_opsi6;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->edit_opsi7 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->edit_opsi7;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->edit_opsi8 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->edit_opsi8;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->edit_opsi9 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->edit_opsi9;
+                $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
+                $opsi->save();
+            }
+            if($request->edit_opsi10 != ""){
+                $opsi = new tb_opsi();
+                $opsi->opsi = $request->edit_opsi10;
                 $opsi->id_detail_kuesioner = $detail_kuesioner->id_detail_kuesioner;
                 $opsi->save();
             }

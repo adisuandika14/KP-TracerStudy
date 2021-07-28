@@ -17,16 +17,6 @@ class TelegramBotController extends Controller
         dd($activity);
     }
 
-    // public function sendMessage()
-    // {
-    //     return view('telegram/message')->with('success','Data berhasil dikirim!');
-    // }
-
-    public function sendMessage()
-    {
-        return '584467570';
-    }
-
     public function storeMessage($id, Request $request){
         
         //$test = tb_pengumuman::all();
@@ -45,8 +35,15 @@ class TelegramBotController extends Controller
                 //     'chat_id' => $alumni->chat_id,
                 //     'text' => $text
                 // ]);
-                $message ='Pengumuman \n'.$pengumuman->judul;
-                $url = 'https://api.telegram.org/bot1624417891:AAFwIpCtR4rqQ5FtvvYuk_Q9G6DIM8KmHL0/sendMessage?chat_id='.$alumni->chat_id.'&text='.$message;
+                $message = 'Pengumuman:'.$pengumuman->judul
+                            . '\n'
+                            .'Jenis Pengumuman:'.$pengumuman->jenis
+                            .'Perihal Pengumuman:'.$pengumuman->perihal
+                            .'Sifat Surat:'.$pengumuman->sifat_surat;
+                //             .$pengumuman->lampiran;
+                             //.$pengumuman->InputFile::createFromContents(file_get_contents($lampiran->getRealPath()), Str::random(10) . '.' . $lampiran->getClientOriginalExtension());
+                             
+               $url = "https://api.telegram.org/bot1624417891:AAFwIpCtR4rqQ5FtvvYuk_Q9G6DIM8KmHL0/sendMessage?chat_id=".$alumni->chat_id."&text=".$message;
 
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, $url);
@@ -62,7 +59,7 @@ class TelegramBotController extends Controller
         
         
             // dd($text);
-        return redirect()->back()->with('success','Data berhasil dikirim!');
+        return redirect()->back()->with('statusInput','Data berhasil dikirim!');
     }
 
     public function sendPhoto()

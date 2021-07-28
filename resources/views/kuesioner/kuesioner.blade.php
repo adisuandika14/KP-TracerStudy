@@ -20,18 +20,18 @@
           <!-- Copy drisini -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Kuesioner</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Pertanyaan</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-              <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#create"><i
+              <!-- <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#create"><i
                             class="fas fa-plus"></i> Tambah Kuesioner
-                    </button>
+                    </button> -->
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th style="text-align:center;">Kuesioner</th>
+                      <th style="text-align:center;">Pertanyaan</th>
                       <!-- <th style="text-align:center;">Pertanyaan</th> -->
                       <th style="text-align:center;">Status</th>
                       <th style="text-align:center;">Action</th>

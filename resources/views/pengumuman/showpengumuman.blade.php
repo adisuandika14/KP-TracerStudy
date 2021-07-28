@@ -101,6 +101,39 @@ body {font-family: Arial, Helvetica, sans-serif;}
 } */
 
 </style>
+
+<div class="container-fluid">
+<h1 class="h3 mb-4 text-gray-800"></h1>
+    @if (session()->has('statusInput'))
+      <div class="row">
+        <div class="col-sm-12 alert alert-success alert-dismissible fade show" role="alert">
+            {{session()->get('statusInput')}}
+            <button type="button" class="close" data-dismiss="alert"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      </div>
+    @endif
+
+    @if (count($errors)>0)
+      <div class="row">
+        <div class="col-sm-12 alert alert-danger alert-dismissible fade show" role="alert">
+            <ul>
+              @foreach ($errors->all() as $item)
+                  <li>{{$item}}</li>
+              @endforeach
+            </ul>
+            <button type="button" class="close" data-dismiss="alert"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      </div>
+    @endif
+</div>
+
+
 <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Detail Pengumuman</h6>
@@ -118,15 +151,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-dark">Jenis Pengumuman</label>
-                                    <label type="text" class="form-control" style="width: 50%;" placeholder="">{{$post->jenis}}</label>
+                                    <input type="text" class="form-control" style="width: 50%;" placeholder="" disabled value="{{$post->jenis}}"></input>
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-dark">Perihal Pengumuman</label>
-                                    <label type="text" class="form-control" style="width: 50%;" placeholder="">{{$post->perihal}}</label>
+                                    <input type="text" class="form-control" style="width: 50%;" placeholder="" disabled value="{{$post->perihal}}"></input>
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-dark">Sifat Surat</label>
-                                    <label type="text" class="form-control" style="width: 50%;" placeholder="">{{$post->sifat_surat}}</label>
+                                    <input type="text" class="form-control" style="width: 50%;" placeholder="" disabled value="{{$post->sifat_surat}}"></input>
                                 </div>
                               
                                 <div class="form-group" >                                 

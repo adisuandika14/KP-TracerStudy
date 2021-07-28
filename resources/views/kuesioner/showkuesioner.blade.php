@@ -36,12 +36,12 @@
     @endif
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Pertanyaan</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Sub Pertanyaan</h6>
     </div>
         <div class="card-body">
             <div class="table-responsive">
                     <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#create"><i
-                            class="fas fa-plus"></i> Tambah Pertanyaaan
+                            class="fas fa-plus"></i> Tambah Sub Pertanyaaan
                     </button>
             <div class="container-fluid" style="align-content: center;">
                 <div class="row" >
@@ -156,6 +156,26 @@
                         <label class="font-weight-bold text-dark">Opsi 5</label>
                         <input type="text" class="form-control" id="oopsi5" name="opsi5" placeholder="">
                       </div>
+                      <div class="form-group" id="opsi6" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 6</label>
+                        <input type="text" class="form-control" id="opsi6" name="opsi6" placeholder="">
+                      </div>
+                      <div class="form-group" id="opsi7" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 7</label>
+                        <input type="text" class="form-control" id="opsi7" name="opsi7" placeholder="">
+                      </div>
+                      <div class="form-group" id="opsi8" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 8</label>
+                        <input type="text" class="form-control" id="opsi8" name="opsi8" placeholder="">
+                      </div>
+                      <div class="form-group" id="opsi9" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 9</label>
+                        <input type="text" class="form-control" id="opsi9" name="opsi9" placeholder="">
+                      </div>
+                      <div class="form-group" id="opsi10" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 10</label>
+                        <input type="text" class="form-control" id="opsi10" name="opsi10" placeholder="">
+                      </div>
                       <button type="button" id="btnTambahOpsi" class="btn btn-primary" style="display: none;">Tambah Opsi</button>
                       <div class="modal-footer">
 		                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -165,7 +185,8 @@
                   </div>
 	              </div>
 	            </div>
-    </div>
+          </div>
+          
 
   <!-- Update -->
     <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -221,6 +242,26 @@
                         <label class="font-weight-bold text-dark">Opsi 5</label>
                         <input type="text" class="form-control" id="eedit_opsi5" name="edit_opsi5" placeholder="">
                       </div>
+                      <div class="form-group" id="edit_opsi6" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 6</label>
+                        <input type="text" class="form-control" id="eedit_opsi6" name="edit_opsi6" placeholder="">
+                      </div>
+                      <div class="form-group" id="edit_opsi7" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 7</label>
+                        <input type="text" class="form-control" id="eedit_opsi7" name="edit_opsi7" placeholder="">
+                      </div>
+                      <div class="form-group" id="edit_opsi8" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 8</label>
+                        <input type="text" class="form-control" id="eedit_opsi8" name="edit_opsi8" placeholder="">
+                      </div>
+                      <div class="form-group" id="edit_opsi9" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 9</label>
+                        <input type="text" class="form-control" id="eedit_opsi9" name="edit_opsi9" placeholder="">
+                      </div>
+                      <div class="form-group" id="edit_opsi10" style="display: none;">
+                        <label class="font-weight-bold text-dark">Opsi 10</label>
+                        <input type="text" class="form-control" id="eedit_opsi10" name="edit_opsi10" placeholder="">
+                      </div>
                       <button type="button" id="edit_btnTambahOpsi" class="btn btn-primary" style="display: none;">Tambah Opsi</button>
                       <div class="modal-footer">
 		                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -230,7 +271,7 @@
                   </div>
 	              </div>
 	            </div>
-
+    </div>
 @endsection
 
 @section('custom_javascript')
@@ -262,7 +303,7 @@
                 $("#eedit_opsi"+opsi).val(element['opsi']);
                 $("#edit_opsi"+opsi).fadeIn();
                 opsi = opsi + 1;
-                if(opsi<5){
+                if(opsi<11){
                   $("#edit_btnTambahOpsi").show();
                 }
               });
@@ -276,14 +317,14 @@
                     $("#eedit_opsi"+opsi).val(element['opsi']);
                     $("#edit_opsi"+opsi).fadeIn();
                     opsi = opsi + 1;
-                    if(opsi<5){
+                    if(opsi<11  ){
                       $("#edit_btnTambahOpsi").show();
                     }
                   });
                 }else if($('#edit_id_jenis').val() == 2 || $('#edit_id_jenis').val() == ""){
                   $("#edit_opsi1").prop('required',false);
                   $("#edit_opsi2").prop('required',false);
-                  for(let i = 1; i<=5; i++){
+                  for(let i = 1; i<=11; i++){
                     $('#edit_opsi'+i).fadeOut();
                   }
                   $('#edit_btnTambahOpsi').fadeOut();
@@ -303,7 +344,7 @@
               }else if($('#edit_id_jenis').val() == 2 || $('#edit_id_jenis').val() == ""){
                 $("#edit_opsi1").prop('required',false);
                 $("#edit_opsi2").prop('required',false);
-                for(let i = 1; i<=5; i++){
+                for(let i = 1; i<=11; i++){
                   $('#edit_opsi'+i).fadeOut();
                 }
                 $('#edit_btnTambahOpsi').fadeOut();
@@ -326,7 +367,7 @@
               }else if($('#edit_id_jenis').val() == 2 || $('#edit_id_jenis').val() == ""){
                 $("#edit_opsi1").prop('required',false);
                 $("#edit_opsi2").prop('required',false);
-                for(let i = 1; i<=5; i++){
+                for(let i = 1; i<=11; i++){
                   $('#edit_opsi'+i).fadeOut();
                 }
                 $('#edit_btnTambahOpsi').fadeOut();
@@ -335,7 +376,7 @@
             $('#edit_btnTambahOpsi').click(function(){
               $('#edit_opsi'+opsi).fadeIn();
               opsi = opsi + 1;
-              if(opsi == 6){
+              if(opsi == 11){
                 $('#edit_btnTambahOpsi').fadeOut();
               }
             });
@@ -358,7 +399,7 @@
         }else if($('#kuesioner').val() == 2 || $('#kuesioner').val() == ""){
           $("#oopsi1").prop('required',false);
           $("#oopsi2").prop('required',false);
-          for(let i = 1; i<=5; i++){
+          for(let i = 1; i<=11; i++){
             $('#opsi'+i).fadeOut();
           }
           $('#btnTambahOpsi').fadeOut();
@@ -368,16 +409,15 @@
     $('#btnTambahOpsi').click(function(){
       $('#opsi'+id_opsi).fadeIn();
       id_opsi = id_opsi + 1;
-      if(id_opsi == 6){
+      if(id_opsi == 11){
         $('#btnTambahOpsi').fadeOut();
       }
     });
   </script>
 @endsection
-
-
 @section('custom_javascript')
 <script>
+
 //Opsi 
     let id_jawab;
     $('#essay').change(function() {
@@ -386,7 +426,7 @@
           $('#opsi1').fadeIn();
           $('#btnTambahOpsi').fadeIn();
         }else if($('#essay').val() == "" || $('#essay').val() == ""){
-          for(let i = 1; i<=5; i++){
+          for(let i = 1; i<=10; i++){
             $('#opsi'+i).fadeOut();
           }
           $('#btnTambahOpsi').fadeOut();

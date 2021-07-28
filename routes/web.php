@@ -91,6 +91,14 @@ Route::group(['prefix' => 'admin',  'middleware' => 'AdminMiddleware'],function(
     Route::post('/masterprodi/update','prodiController@update');
     Route::get('/masterprodi/{id}/delete','prodiController@delete');
 
+
+    //Master Pertanyaan
+    Route::get('/pertanyaan','pertanyaanController@show');
+    Route::post('/masterpertanyaan/create','pertanyaanController@create');
+    //Route::get('/masterpertanyaan/{id}/edit','pertanyaanController@edit');
+    Route::post('/masterpertanyaan/update','pertanyaanController@update');
+    Route::get('/masterpertanyaan/{id}/delete','pertanyaanController@delete');
+
     //Kuesioner
     Route::get('/kuesioner','kuesionerController@show');
     Route::post('/kuesioner/create','kuesionerController@create');

@@ -105,6 +105,9 @@
                 <div class="collapse-item">
                     <a class="@yield('collapse2')" href="/admin/prodi">Program Studi</a>
                 </div>
+                <div class="collapse-item">
+                    <a class="@yield('collapse3')" href="/admin/pertanyaan">Pertanyaan</a>
+                </div>
 
 
             </div>
